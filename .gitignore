@@ -21,3 +21,17 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+#style
+src/App.css.map
+src/App.css
+src/components/Header/Header.css.map
+src/components/Header/Header.css
+src/components/Header/UpLoadButton/UpLoadButton.css
+src/components/Header/UpLoadButton/UpLoadButton.css.map
+src/components/Header/SearchBar/Searchbar.css.map
+src/components/Header/SearchBar/Searchbar.css
+src/components/Header/Logo/Logo.css.map
+src/components/Header/Logo/Logo.css
+
+src/index.css

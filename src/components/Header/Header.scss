@@ -1,0 +1,17 @@
+@use "../../styles/partials/mixin" as *;
+
+.App-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include mobile {
+        flex-direction: row;
+    }
+
+    @include tablet {
+        @include buttonsTablet();
+        justify-content: space-between;
+
+    }
+}

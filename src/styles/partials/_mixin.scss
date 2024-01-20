@@ -1,0 +1,70 @@
+@use "../partials/varibles" as *;
+
+@font-face {
+    font-family: Avenir Next Regular;
+    src: url(../../assets/Font/AvenirNextLTPro-Regular.otf), format(otf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Avenir Next Demi;
+    src: url(../../assets/Font/AvenirNextLTPro-Demi.otf), format(otf);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: Avenir Next Bold;
+    src: url(../../assets/Font/AvenirNextLTPro-Bold.otf), format(otf);
+    font-weight: 700;
+
+}
+@mixin mobile {
+    @media screen and (min-width: $below-mobile-breakpoint)  {
+        @content; 
+    }
+}
+
+@mixin tablet {
+    @media screen   and (min-width: $tablet-breakpoint)  {
+        @content;
+       
+    }
+}
+@mixin desktop {
+    @media screen and (min-width: $desktop-breakpoint ) {
+        @content;
+    }
+
+}
+@mixin buttonsMobile {
+    font-size: 0.625rem;
+    line-height: 0.125rem;
+    font-family: Avenir Next Bold;
+
+}
+@mixin anchorList{
+    text-decoration: none;
+    
+}
+@mixin buttonsTablet {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    font-family: Avenir Next Regular;
+
+}
+
+@mixin bodyMobile {
+    font-size: 0.8125;
+    line-height: 1.125;
+    font-family: Avenir Next Regular;
+}
+@mixin bodyTablet{
+    font-size: 0.875;
+    line-height: 1.375;
+    font-family: Avenir Next Regular;
+}
+@mixin PageHeaderMobile {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-family: Avenir Next Bold;
+}

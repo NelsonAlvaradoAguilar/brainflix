@@ -1,31 +1,32 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: Avenir Next Regular;
+  src: url(../../assets/Font/AvenirNextLTPro-Regular.otf), format(otf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: Avenir Next Demi;
+  src: url(../../assets/Font/AvenirNextLTPro-Demi.otf), format(otf);
+  font-weight: 600;
+}
+@font-face {
+  font-family: Avenir Next Bold;
+  src: url(../../assets/Font/AvenirNextLTPro-Bold.otf), format(otf);
+  font-weight: 700;
+}
+body {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 0.8125;
+  line-height: 1.125;
+  font-family: Avenir Next Regular;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/*
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
@@ -36,3 +37,4 @@
     transform: rotate(360deg);
   }
 }
+*//*# sourceMappingURL=App.css.map */
