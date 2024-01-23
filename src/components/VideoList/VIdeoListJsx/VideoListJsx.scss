@@ -1,0 +1,27 @@
+.list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+
+
+    &__player {
+        width: 90px;
+        height:55px;
+        border-radius: 4px;
+
+    }
+
+    &__description {
+        margin-left: 1rem;
+        width: 120px;
+    }
+
+    &__title {
+        font-size: 0.7rem;
+    }
+
+    &__channel {
+        font-size: 0.7rem;
+    }
+}

@@ -33,5 +33,14 @@ src/components/Header/SearchBar/Searchbar.css.map
 src/components/Header/SearchBar/Searchbar.css
 src/components/Header/Logo/Logo.css.map
 src/components/Header/Logo/Logo.css
-
+src/components/VideoSection/VideoDescription/VideoDescription.css
+src/components/VideoSection/VideoSection.css
 src/index.css
+src/components/VideoSection/VideoDescription/VideoDescription.css.map
+src/components/VideoSection/VideoSection.css.map
+src/components/VideoSection/Player/player.css.map
+src/components/VideoSection/Player/player.css
+src/components/VideoList/VIdeoListJsx/VideoListJsx.css
+src/components/VideoList/VIdeoListJsx/VideoListJsx.css.map
+src/components/VideoList/VideoList.css
+src/components/VideoList/VideoList.css.map

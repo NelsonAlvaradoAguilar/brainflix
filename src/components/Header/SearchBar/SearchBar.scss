@@ -6,14 +6,14 @@
 
     &__search-bar {
         width: 100%;
-        display: flex;
-        justify-content: space-between;
+        display: flex;       
         flex-direction: column;
 
         @include tablet {
-            width: 65%;
+            width: 30rem;
             flex-direction: row;
             align-items: center;
+          
         }
     }
 
@@ -41,20 +41,25 @@
     &__input-avatar-container {
         display: flex;
         width: 100%;
-        justify-content: space-between;
+
         padding-top: 1rem;
         padding-bottom: 1rem;
+        @include tablet {
+          margin-left: auto;
+
+        }
 
     }
 
     &__avatarImg {
         width: 40px;
         border-radius: 50%;
+        margin-left: 1rem;
 
         @include tablet {
             visibility: hidden;
             width: 0%;
-            
+
         }
     }
 
