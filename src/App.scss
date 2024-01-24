@@ -1,7 +1,7 @@
 @use "./styles/partials/mixin" as *;
 body{
-  padding-left: 1rem;
-  padding-right: 1rem;
+ margin-right: 0%;
+ margin-left: 0%;
   @include bodyMobile();
 }
 

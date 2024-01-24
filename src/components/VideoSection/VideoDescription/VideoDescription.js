@@ -1,7 +1,7 @@
 import React from "react"
-
-
-export default  function VideoDescription(props) {
+import CommentsForm from "./CommentsForm/CommentsForm"
+import './VideoDescription.scss'
+export default function VideoDescription(props) {
 
     return (
 
@@ -19,21 +19,28 @@ export default  function VideoDescription(props) {
 
                 <p>{props.description}</p>
             </div>
+            <h4>3 Comments</h4>
 
+            <CommentsForm />
         </>
 
 
     )
 }
-
+/*
 VideoDescription.defaultProps = {
-  
-   key:'',
-    video:"",
-    title:"",
-    channel:"",
-    timestamp:"",
-    views:"",
-    likes:"",
-    description:""
+
+
+    video: "",
+    title: "",
+    channel: "",
+    timestamp: "",
+    views: "",
+    likes: "",
+    description: ""
 };
+"id": "35bba08b-1b51-4153-ba7e-6da76b5ec1b9",
+"name": "Micheal Lyons",
+"comment": "They BLEW the ROOF off at their last event, once everyone started figuring out they were going. This is still simply the greatest opening of an event I have EVER witnessed.",
+"likes": 0,
+"timestamp": 1628522461000*/

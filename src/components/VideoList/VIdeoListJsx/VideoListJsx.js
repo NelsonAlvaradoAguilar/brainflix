@@ -1,29 +1,29 @@
 import React from "react";
 import "./VideoListJsx.scss"
-export default function VideoListJsx(props) {
+export default function VideoListJsx({ video, onClick }) {
     return (
-      
-
-            <div className="list">
 
 
-                <video className="list__player" poster={props.image} controls type="video/mp4" ></video>
-                <div className="list__description">
-                    <h1 className='list__title'>{props.title}</h1>
-                    <p className='list__channel'>{props.channel}</p>
+        <div className="list" onClick={()=>onClick(video.id)}>
 
 
-                </div>
+            <img className="list__player" src={video.image} alt={video.title}></img>
+            <div className="list__description">
+                <h3 className='list__title'>{video.title}</h3>
+                <p className='list__channel'>{video.channel}</p>
 
 
             </div>
 
-       
-    )
-}
+
+        </div>
+
+
+    );
+};
 VideoListJsx.defaultProps = {
-    id: "",
-    title: "",
+    key:'',
+    title:'',
     channel: '',
-    image: ''
+    image:''
 };

@@ -12,11 +12,11 @@ import React from "react";
 
 
 
-export default function Player(props) {
+export default function Player({video}) {
 
 
 
-    ;
+    
 
     return (
 
@@ -24,8 +24,8 @@ export default function Player(props) {
         <>
             <div className="player">
 
-                <video className="player-video" controls poster = {props.image}width='auto' height='auto'>
-                <source src={props.image} type="video/mp4" />
+                <video className="player-video" controls poster = {video.image}width='auto' height='auto'>
+                <source src={video.image} type="video/mp4" />
 
                 </video>
 
@@ -37,17 +37,6 @@ export default function Player(props) {
 
 
 }
-/*
-Player.defaultProps = {
-  
-    porDefecto: 'las props', 
-    video:"",
-    title:"",
-    channel:"",
-    timestamp:"",
-    views:"",
-    likes:"",
-    description:""
-};
 
-*/
+
+
