@@ -4,7 +4,7 @@ export default function VideoListJsx({ video, onClick }) {
     return (
 
 
-        <div className="list" onClick={()=>onClick(video.id)}>
+        <div className="list" >
 
 
             <img className="list__player" src={video.image} alt={video.title}></img>
