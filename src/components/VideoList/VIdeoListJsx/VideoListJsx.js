@@ -1,6 +1,6 @@
 import React from "react";
 import "./VideoListJsx.scss"
-export default function VideoListJsx({ video, onClick }) {
+export default function VideoListJsx({ video,  }) {
     return (
 
 
@@ -20,10 +20,4 @@ export default function VideoListJsx({ video, onClick }) {
 
 
     );
-};
-VideoListJsx.defaultProps = {
-    key:'',
-    title:'',
-    channel: '',
-    image:''
 };

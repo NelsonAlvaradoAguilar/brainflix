@@ -2,7 +2,7 @@ import React from "react"
 import mainVideo from '../../../../data/video-details.json'
 export default function CommentsContainer(props) {
 
-console.log({mainVideo});
+
 
     return (
         <div>
@@ -22,12 +22,4 @@ console.log({mainVideo});
 
 
 }
-/*
-CommentsContainer.defaultProps = {
-    comments: {
-        key: '',
-        name: '',
-        comment: ''
 
-    }
-}*/

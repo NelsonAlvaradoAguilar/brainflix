@@ -7,7 +7,7 @@ import React, { useState, useEffect } from "react";
 
 
 
-export default function VideoSection(props) {
+export default function VideoSection() {
 
     const [videos, setVideos] = useState([]);
     const [mainVideo, setMainVideo] = useState({});
@@ -18,16 +18,11 @@ export default function VideoSection(props) {
 
         setMainVideo(Video[0]);
 
-        setComments(Video[0])
+        setComments(mainVideo.comments)
     }, []);
-    console.log(comments);
-    /*
-        const handleVideoClick = (selectedVideo) => {
-    
-            setMainVideo(selectedVideo);
-        };
-    */
 
+
+    console.log(mainVideo.comments)
     return (
         <>
             <Player video={mainVideo} />
@@ -43,24 +38,27 @@ export default function VideoSection(props) {
                 comments={mainVideo.comments}
 
             />
-            <CommentsContainer 
-            
-           comments={mainVideo.comments}
+            {mainVideo.comments && mainVideo.comments.map(comments => (
 
-           />
+
+                <CommentsContainer
+                    key={comments.id}
+                    name={comments.name}
+                    comment={comments.comment}
+                />
+
+
+            ))}
+
+
 
 
 
         </>
-    );
 
+    );
+    ;
 
 }
 
 
-/*  comments: {
-        key: '',
-        name: '',
-        comment: ''
-key={props.id} comment={props.comment} name={props.name} 
-    }*/ 
