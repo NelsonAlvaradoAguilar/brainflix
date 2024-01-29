@@ -1,6 +1,23 @@
-.player-video{
-    padding-top: 1rem;
-    width: 100%;
-    height: 100%;
-    color: aqua;
+@use '../../../styles/partials/mixin' as *;
+@use '../../../styles/partials/varibles' as *;
+
+.player__container {
+    position: relative;
+    padding-bottom: 56.26%;
+  
+    margin-bottom: 1.5rem;
+ 
+    &--video {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        background-color:$brainflixBlack ;
+      
+      
+    }
+    @include  desktop {
+
+      margin-bottom: 0%;
+       
+    }
 }

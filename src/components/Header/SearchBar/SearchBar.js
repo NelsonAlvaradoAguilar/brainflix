@@ -3,8 +3,8 @@ import './SearchBar.scss'
 import UpLoadButton from '../UpLoadButton/UpLoadButton';
 function SearchBar() {
     return (
-        <div className='app-header__search-bar'> <div className='app-header__input-avatar-container' ><input className='app-header__search-input'
-            placeholder='Search' /> <img src={avatarImg} alt='avatar' className='app-header__avatarImg'></img></div> <UpLoadButton /><img alt='avatar' src={avatarImg} className='app-header__hiden-avatar'></img></div>
+        <div className='search-bar'> <div className='search-bar__input-avatar' ><input className='search-bar__search-input'
+            placeholder='Search' /> <img src={avatarImg} alt='avatar' className='search-bar__avatarImg'></img></div> <UpLoadButton /><img alt='avatar' src={avatarImg} className='search-bar__hiden-avatar'></img></div>
 
     )
 }

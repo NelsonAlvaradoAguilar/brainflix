@@ -5,13 +5,6 @@ import React from "react";
 
 
 
-
-
-
-
-
-
-
 export default function Player({video}) {
 
 
@@ -22,9 +15,9 @@ export default function Player({video}) {
 
 
         <>
-            <div className="player">
+            <div className="player__container">
 
-                <video className="player-video" controls poster = {video.image}width='auto' height='auto'>
+                <video className="player__container--video" controls poster = {video.image}width='auto' height='auto'>
                 <source src={video.image} type="video/mp4" />
 
                 </video>

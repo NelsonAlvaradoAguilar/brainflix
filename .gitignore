@@ -44,3 +44,11 @@ src/components/VideoList/VIdeoListJsx/VideoListJsx.css
 src/components/VideoList/VIdeoListJsx/VideoListJsx.css.map
 src/components/VideoList/VideoList.css
 src/components/VideoList/VideoList.css.map
+src/components/VideoSection/VideoDescription/CommetsList/CommentsList.css.map
+src/components/VideoSection/VideoDescription/CommetsList/CommentsList.css
+src/components/VideoSection/VideoDescription/CommetsList/comments/comments.css.map
+src/components/VideoSection/VideoDescription/CommentsForm/CommentsForm.css
+src/components/VideoSection/VideoDescription/CommetsList/comments/comments.css
+src/components/VideoSection/VideoDescription/CommentsForm/CommentsForm.css.map
+src/components/VideoSection/VideoDescription/CommentsForm/CommentsForm.css
+src/components/VideoSection/VideoDescription/CommentsForm/CommentsForm.css.map

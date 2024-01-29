@@ -1,0 +1,16 @@
+@use '../../styles/partials/mixin' as *;
+@use '../../styles/partials/varibles' as *;
+
+.body-section{
+ 
+    @include  desktop {
+
+        display: flex;
+        flex-direction: row;
+        margin-right:2rem ;
+        margin-left: 2rem;
+       padding-bottom: 0%;
+    }
+    
+    
+}

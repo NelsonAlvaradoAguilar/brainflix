@@ -1,14 +1,19 @@
-
+import React,{useState,useEffect} from 'react';
 import './App.scss';
+import Video from './data/video-details.json'
 import Header from './components/Header/Header';
 import VideoSection from './components/VideoSection/VideoSection';
-import VideoList from './components/VideoList/VideoList';
+
 function App() {
+
+
+
   return (
     <div className="App">
       <Header />
-      <VideoSection />
-     <VideoList />
+      <VideoSection 
+       />
+    
     </div>
   );
 }

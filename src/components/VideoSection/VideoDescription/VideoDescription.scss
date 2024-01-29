@@ -1,18 +1,99 @@
 @use '../../../styles/partials/mixin' as *;
 @use '../../../styles/partials/varibles' as *;
 
+.description {
+    padding-left: 1rem;
+    padding-right: 1rem;
 
-.avatar-form {
-    background-color: aqua;
-}
+    &__divider {
+        background-color: $mercuryDivider;
+        width: 100%;
+        height: 1px;
+    }
 
-.form-container__text-field {
-    width: calc(0.96*100vw);
-    height: 100px;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-}
+    @include tablet {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
 
-.form-container__button {
-    background-color: $brainflixBlue;
+    }
+    @include desktop {
+       margin-bottom: 2.5rem;
+     }
+
+
+
+    &__title {
+        @include tablet {
+
+            @include pageHeaderTabletDesktop()
+        }
+
+    }
+
+   
+
+    &__interactions {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+    }
+
+    &__channel {
+        @include subHeaderMobile();
+
+        @include tablet {
+
+            @include sectionSubHeaderTabletDesktop()
+            
+        }
+        @include desktop {
+            margin-right: 1rem;
+            display: flex;
+            align-items: center;
+         }
+
+    }
+
+    &__views {
+        background-image: url(../../../assets/Icons/views.svg);
+        background-repeat: no-repeat;
+        background-position: 2%;
+        text-indent: 2rem;
+        color: $silverSecTxt ;
+    }
+
+    &__likes {
+        background-image: url(../../../assets/Icons/likes.svg);
+        background-repeat: no-repeat;
+        background-position: 2%;
+        text-indent: 1.8rem;
+        color: $silverSecTxt ;
+        @include desktop {
+           margin-left: 1rem;
+        }
+    }
+    &__likes-views-channel-timestamp {
+        @include desktop {
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            align-items: center;
+        }
+    }
+
+    &__timestamp {
+        color: $silverSecTxt ;
+       
+    }
+
+    &__subheader {
+        @include subHeaderMobile();
+
+        @include tablet {
+
+            @include sectionSubHeaderTabletDesktop()
+        }
+
+    }
 }

@@ -1,22 +1,42 @@
 
-import Comments from '../../../../data/video-details.json'
+import React, { useState } from "react";
+import Comments from "../CommetsList/comments/comments";
 
+import "./CommentsForm.scss"
+import CommentsList from "../CommetsList/CommentsList";
 export default function CommentsForm(props) {
-    return (
-        <div className="form-container">
-            <img className="form-container__avatar" alt="/" ></img>
-            <div>
-                <h3 className="form-container__title" >JOIN THE CONVERSATION</h3>
-                <form >
-                    <div>
-                        <input className="form-container__text-field" type="text" placeholder="Add a new comment" />
-                    </div>
-                    <button className="form-container__button" type="submmit">COMMENT</button>
-                </form>
-            </div>
+   
 
+    return (
+        <section className="form" >
+            <img className="form__avatar"  ></img>
            
+
+                <form className="form__container">
+                    <label className="form__label"
+                        htmlFor='comments'>JOIN THE CONVERSATION
+                        <div>
+                            <input className="form__text-field"
+                                type="text"
+                                placeholder="Add a new comment"
+                                name="comment"
+                                id="comment"
+                                title="name only accept letter and spaces " required
+                                
+                               
+                              
+                            />
+                        </div>
+                    </label>
+                    <button className="form__button" type="submmit">COMMENT</button>
+                </form>
+
                
-        </div>
+          
+
+
+
+        </section>
     )
 }
+  
