@@ -1,15 +1,7 @@
 import './player.scss'
 import React from "react";
 
-
-
-
-
 export default function Player({video}) {
-
-
-
-    
 
     return (
 

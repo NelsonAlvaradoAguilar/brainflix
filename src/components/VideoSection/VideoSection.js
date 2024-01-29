@@ -8,17 +8,12 @@ import React, { useState, useEffect } from "react";
 import VideoList from "../VideoList/VideoList";
 import './VideoSection.scss'
 
-
 export default function VideoSection() {
 
     const [sideLists, setSideList] = useState([]);
     const [mainVideo, setMainVideo] = useState({});
     const [commentsContent, setCommentsContent] = useState([]);
     const [activeVideo, setActiveVideo] = useState({});
-
-
-
-
     useEffect(() => {
 
         if (Video.length > 0) {
@@ -34,10 +29,6 @@ export default function VideoSection() {
             setCommentsContent(mainVideo.comments);
         }
     }, [Video]);
-
-
-
-
     const handleVideoSelect = (chosenVideo) => {
         setSideList(pastSideLists => {
             const newdSideList = pastSideLists.filter(video => video.id !== chosenVideo.id);
@@ -73,8 +64,6 @@ export default function VideoSection() {
                 <CommentsForm />
 
                 {mainVideo.comments && mainVideo.comments.map(comments => (
-
-
                     <CommentsList
 
                         commentsContent={commentsContent}
@@ -86,11 +75,7 @@ export default function VideoSection() {
 
 
                 ))};
-
               </div>
-
-
-
                 <VideoList videos={sideLists} pickVideo={handleVideoSelect} />
             </div>
         </section>
