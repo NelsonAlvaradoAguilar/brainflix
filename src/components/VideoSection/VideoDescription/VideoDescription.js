@@ -1,14 +1,8 @@
 import React from "react"
-
 import './VideoDescription.scss';
-
-
-import CommentsVideo from "../../../data/video-details.json"
 export default function VideoDescription(props) {
-
     return (
 
-    
             <article className="description">
 
                 <h1 className="description__title">{props.title}</h1>

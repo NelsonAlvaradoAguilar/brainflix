@@ -1,8 +1,5 @@
 import './comments.scss'
-
-
 export default function Comments(props) {
-
     return (
         <section className="comments" key={props.id}>
             

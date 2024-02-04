@@ -1,5 +1,5 @@
-@use '../../../../styles/partials/mixin' as *;
-@use '../../../../styles/partials/varibles' as *;
+@use '../../../styles/partials/mixin' as *;
+@use '../../../styles/partials/varibles' as *;
 
 .form {
     
@@ -23,7 +23,7 @@
     }
 
     &__avatar {
-        background-image: url(../../../../assets/Images/Mohan-muruge.jpg);
+        background-image: url(../../../assets/Images/Mohan-muruge.jpg);
         width: 36px;
         height: 38px;
         background-size: cover;
@@ -63,7 +63,7 @@
     }
 
     &__button {
-        background-image: url(../../../../assets/Icons/add_comment.svg);
+        background-image: url(../../../assets/Icons/add_comment.svg);
         background-repeat: no-repeat;
         background-position: 2%;
         background-color: $brainflixBlue;

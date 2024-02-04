@@ -23,6 +23,14 @@ yarn-debug.log*
 yarn-error.log*
 
 #style
+src/components/VideoSection/Form/Form.css.map
+src/components/VideoSection/Form/Form.css
+src/components/VideoSection/CommetsList/comments/comments.css
+src/components/VideoSection/CommetsList/comments/comments.css.map
+src/components/VideoSection/CommetsList/CommentsList.css
+src/components/VideoSection/CommetsList/CommentsList.css.map
+src/components/VideoSection/VideoDescription/Form/Form.css.map
+src/components/VideoSection/VideoDescription/Form/Form.css
 src/App.css.map
 src/App.css
 src/components/Header/Header.css.map
@@ -47,8 +55,8 @@ src/components/VideoList/VideoList.css.map
 src/components/VideoSection/VideoDescription/CommetsList/CommentsList.css.map
 src/components/VideoSection/VideoDescription/CommetsList/CommentsList.css
 src/components/VideoSection/VideoDescription/CommetsList/comments/comments.css.map
-src/components/VideoSection/VideoDescription/CommentsForm/CommentsForm.css
+src/components/VideoSection/VideoDescription/Form/Form.css
 src/components/VideoSection/VideoDescription/CommetsList/comments/comments.css
-src/components/VideoSection/VideoDescription/CommentsForm/CommentsForm.css.map
-src/components/VideoSection/VideoDescription/CommentsForm/CommentsForm.css
-src/components/VideoSection/VideoDescription/CommentsForm/CommentsForm.css.map
+src/components/VideoSection/VideoDescription/Form/Form.css.map
+src/components/VideoSection/VideoDescription/Form/Form.css
+src/components/VideoSection/VideoDescription/Form/Form.css.map
