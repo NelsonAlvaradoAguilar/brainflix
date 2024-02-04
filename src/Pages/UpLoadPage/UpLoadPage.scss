@@ -4,6 +4,7 @@
 .upload-container {
     padding-left: 1rem;
     padding-right: 1rem;
+
 border-top: 1px solid $mercuryDivider;
     &__title {
         @include pageHeaderMobile();
@@ -54,6 +55,7 @@ border-top: 1px solid $mercuryDivider;
         width: 100%;
         border-style: none;
         background-color: $whiteBackgTextC;
-
+        margin-top: 1rem;
+        margin-bottom: 2rem;
     }
 }
