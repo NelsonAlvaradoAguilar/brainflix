@@ -1,8 +1,7 @@
 import './comments.scss'
 export default function Comments(props) {
     return (
-        <section className="comments" key={props.id}>
-            
+        <section className="comments" key={props.id}>          
             <img className="comments__avatar" alt="" ></img>
             <div className="comments__field" >
                 <div className='comments__name-timestamp'>
@@ -11,8 +10,6 @@ export default function Comments(props) {
                 </div>
                 <p className="comments__field">{props.comment}</p>
             </div>
-           
-
         </section>
 
     )

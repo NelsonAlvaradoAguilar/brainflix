@@ -10,7 +10,7 @@ export default function HomePage({mainVideo,sideLists,videoSelected}) {
   
     return (
         <section >
-            <Player video={mainVideo} />
+            <Player video={mainVideo}  />
 
             <div className="body-section">
               <div className="body-section__descritiption-form">
@@ -36,7 +36,7 @@ export default function HomePage({mainVideo,sideLists,videoSelected}) {
                     />
 
 
-                ))};
+                ))}
               </div>
                 <VideoList videos={sideLists} pickVideo={videoSelected} />
             </div>

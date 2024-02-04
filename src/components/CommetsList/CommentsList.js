@@ -13,15 +13,7 @@ export default function CommentsList(props) {
                     name={props.name}
                     comment={props.comment}
                     timestamp={props.timestamp} />
-
-            
         </section>
-
     )
-
-
-
-
-
 }
 

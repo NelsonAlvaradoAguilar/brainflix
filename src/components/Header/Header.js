@@ -2,14 +2,14 @@ import React from "react";
 import './Header.scss';
 import SearchBar from "./SearchBar/SearchBar";
 import Logo from "./Logo/Logo";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Header() {
     return (
         <header className="App-header">
-            <Logo />
-            <SearchBar />
-            
+           <NavLink to="/"><Logo /> </NavLink> 
+           <NavLink to="/UpLoadPage"><SearchBar /></NavLink>  
+           
         </header>
     )
 }

@@ -4,6 +4,8 @@ import Video from './data/video-details.json'
 import VideoSideList from './data/videos.json'
 import Header from './components/Header/Header';
 import HomePage from './Pages/HomePage/HomePage';
+import UpLoadPage from './Pages/UpLoadPage/UpLoadPage';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 
 
 function App() {
@@ -39,12 +41,14 @@ function App() {
 
   return (
     <div className="App">
-      <Header 
-      
-      />
-      <HomePage mainVideo={mainVideo} videoSelected={handleVideoSelect} sideLists={sideLists}
-      
-      />
+     
+      <BrowserRouter>
+      <Header  />
+      <Routes>
+        <Route path='/' element={<HomePage mainVideo={mainVideo} videoSelected={handleVideoSelect} sideLists={sideLists}/>} />
+        <Route path='/UpLoadPage' element={<UpLoadPage/>}/>
+      </Routes>
+      </BrowserRouter>
     </div>
   );
 }

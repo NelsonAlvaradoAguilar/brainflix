@@ -23,10 +23,5 @@ export default function VideoDescription(props) {
             </article>
            
 
-
-
-
-
-
     )
 }

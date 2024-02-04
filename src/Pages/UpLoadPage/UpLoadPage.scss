@@ -1,0 +1,59 @@
+@use "../../styles/partials/mixin" as *;
+@use "../../styles/partials/varibles" as *;
+
+.upload-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+border-top: 1px solid $mercuryDivider;
+    &__title {
+        @include pageHeaderMobile();
+    }
+
+    &__subtitle {
+        color: $silverSecTxt;
+    }
+&__player{
+    background-image: url(../../assets/Images/Upload-video-preview.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 4px;
+    width: 100%;
+    height: 155px;
+    margin-bottom: 1rem;
+}
+    &__labels {
+        color: $silverSecTxt;
+    }
+
+    &__input-field {
+        background-color: $alabasterBackg ;
+        height: 48px;
+        width: 100%;
+        border-radius: 4px;
+        border: 2px solid $mercuryDivider;
+        margin-bottom: 0.8rem;
+
+        &--description {
+            height: 100px;
+        }
+    }
+    &__button{
+        height: 48px;
+        border-radius: 4px;
+        border-style: none;
+        background-color:$brainflixBlue ;
+        width: 100%;
+        color: $whiteBackgTextC;
+        background-image: url(../../assets/Icons/upload.svg);
+        background-repeat: no-repeat;
+        background-position: 2%;
+      
+    }
+    &__button-cancel{
+        color:$brainflixBlue ;
+        width: 100%;
+        border-style: none;
+        background-color: $whiteBackgTextC;
+
+    }
+}

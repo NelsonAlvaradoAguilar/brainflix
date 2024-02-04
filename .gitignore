@@ -43,7 +43,13 @@ src/components/VideoDescription/VideoDescription.css
 src/components/VideoDescription/VideoDescription.css.map
 src/components/VideoList/VideoList.css
 src/components/VideoList/VideoList.css.map
+src/Pages/HomePage/HomePage.css.map
+src/Pages/HomePage/HomePage.css
 
 # style-pages
 src/App.css.map
 src/App.css
+src/Pages/HomePage/HomePage.css
+src/Pages/HomePage/HomePage.css.map
+src/Pages/UpLoadPage/UpLoadPage.css.map
+src/Pages/UpLoadPage/UpLoadPage.css
