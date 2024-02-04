@@ -1,12 +1,12 @@
 
-import Player from "./Player/Player";
-import VideoDescription from './VideoDescription/VideoDescription'
-import Form from "./Form/Form";
-import CommentsList from "./CommetsList/CommentsList";
-import VideoList from "../VideoList/VideoList";
-import './VideoSection.scss'
+import Player from '../../components/Player/Player';
+import VideoDescription from '../../components/VideoDescription/VideoDescription'
+import Form from '../../components/Form/Form';
+import CommentsList from '../../components/CommetsList/CommentsList';
+import VideoList from '../../components/VideoList/VideoList';
+import './HomePage.scss'
 
-export default function VideoSection({mainVideo,sideLists,videoSelected}) {
+export default function HomePage({mainVideo,sideLists,videoSelected}) {
   
     return (
         <section >

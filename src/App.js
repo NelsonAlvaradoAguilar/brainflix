@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './App.scss';
 import Video from './data/video-details.json'
+import VideoSideList from './data/videos.json'
 import Header from './components/Header/Header';
-import VideoSection from './components/VideoSection/VideoSection';
+import HomePage from './Pages/HomePage/HomePage';
+
 
 function App() {
 
@@ -13,7 +15,7 @@ function App() {
   useEffect(() => {
 
     if (Video.length > 0) {
-      const mainVideo = Video.find(video => video.true) || Video[0];
+      const mainVideo = VideoSideList.find(video => video.true) || Video[0];
       const sideLists = Video.filter(video => video.id !== mainVideo.id);
       setMainVideo(mainVideo);
       setSideList(sideLists);
@@ -37,10 +39,12 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <VideoSection mainVideo={mainVideo} videoSelected={handleVideoSelect} sideLists={sideLists}
+      <Header 
+      
       />
-
+      <HomePage mainVideo={mainVideo} videoSelected={handleVideoSelect} sideLists={sideLists}
+      
+      />
     </div>
   );
 }

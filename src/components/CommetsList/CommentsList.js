@@ -1,6 +1,6 @@
 import React from "react"
 import './CommentsList.scss'
-import Comments from "./comments/comments"
+import Comments from "./Comments/comments"
 export default function CommentsList(props) {
 
 
@@ -10,8 +10,8 @@ export default function CommentsList(props) {
            <div className='commentsList-container__divider'></div>
                 <Comments
                     key={ props.id}
-                    name={props .name}
-                    comment={props .comment}
+                    name={props.name}
+                    comment={props.comment}
                     timestamp={props.timestamp} />
 
             

@@ -1,5 +1,5 @@
-@use '../../../styles/partials/mixin' as *;
-@use '../../../styles/partials/varibles' as *;
+@use '../../styles/partials/mixin' as *;
+@use '../../styles/partials/varibles' as *;
 
 .description {
     padding-left: 1rem;
@@ -56,7 +56,7 @@
     }
 
     &__views {
-        background-image: url(../../../assets/Icons/views.svg);
+        background-image: url(../../assets/Icons/views.svg);
         background-repeat: no-repeat;
         background-position: 2%;
         text-indent: 2rem;
@@ -64,7 +64,7 @@
     }
 
     &__likes {
-        background-image: url(../../../assets/Icons/likes.svg);
+        background-image: url(../../assets/Icons/likes.svg);
         background-repeat: no-repeat;
         background-position: 2%;
         text-indent: 1.8rem;

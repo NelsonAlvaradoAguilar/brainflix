@@ -1,9 +1,10 @@
 
 import "./Form.scss"
+
 export default function Form() {
     return (
         <section className="form" >
-            <img className="form__avatar"  ></img>
+            <img className="form__avatar"  alt=""></img>
             <form className="form__container">
                 <label className="form__label"
                     htmlFor='comments'>JOIN THE CONVERSATION
