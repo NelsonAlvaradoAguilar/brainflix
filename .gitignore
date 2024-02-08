@@ -53,3 +53,5 @@ src/Pages/HomePage/HomePage.css
 src/Pages/HomePage/HomePage.css.map
 src/Pages/UpLoadPage/UpLoadPage.css.map
 src/Pages/UpLoadPage/UpLoadPage.css
+src/Pages/VideoDetailsPage/VideoDetails.css.map
+src/Pages/VideoDetailsPage/VideoDetails.css

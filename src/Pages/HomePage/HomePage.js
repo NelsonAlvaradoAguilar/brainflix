@@ -5,9 +5,12 @@ import Form from '../../components/Form/Form';
 import CommentsList from '../../components/CommetsList/CommentsList';
 import VideoList from '../../components/VideoList/VideoList';
 import './HomePage.scss'
+import { useNavigate } from 'react-router-dom';
 
 export default function HomePage({mainVideo,sideLists,videoSelected}) {
+    
   
+
     return (
         <section >
             <Player video={mainVideo}  />
