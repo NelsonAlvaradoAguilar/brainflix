@@ -13,31 +13,9 @@ import { apiKey, apiUrl } from './ApiTools/KeyUrl';
 
 function App() {
 
-  const [sideLists, setSideList] = useState([]);
-  const [mainVideo, setMainVideo] = useState({});
-  const [commentsContent, setCommentsContent] = useState([]);
-  const { videoId } = useParams();
-  const [videos, setVideo] = useState();
-  useEffect(
-    () => {
-      const getVideo = async () => {
-        try {
-          const response = await axios.get(`${apiUrl}/videos${apiKey}`);
-          const sideLists = response.data
-          response.data.find((video => video.true) || response.data[0])
-          //  console.log(sideLists );
-          setSideList(sideLists)
-        } catch (error) {
-          console.log('this', error);
-        }
-      };
-      getVideo();
-
-    }, [videoId]
-
-  )
 
 
+/*
   const handleVideoSelect = (chosenVideo) => {
     setSideList(pastSideLists => {
       const newdSideList = pastSideLists.filter(video => video.id !== chosenVideo.id);
@@ -50,7 +28,7 @@ function App() {
 
     setMainVideo(chosenVideo);
     setCommentsContent(chosenVideo.comments);
-  };
+  };*/
 
 
   return (
@@ -59,9 +37,9 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path='/' element={<HomePage mainVideo={mainVideo} videoSelected={handleVideoSelect} sideLists={sideLists} />} />
-          <Route path='/VideoDetailsPage/:videoId' element={<VideoDetailsPage videoId={videoId} />} />
-          <Route path='/UpLoadPage' element={<UpLoadPage />} />
+          <Route exact path='/' element={<HomePage   />} />
+          <Route exact path='/VideoDetailsPage/:videoId' element={<VideoDetailsPage  />} />
+          <Route exact path='/UpLoadPage' element={<UpLoadPage />} />
         </Routes>
       </BrowserRouter>
     </div>

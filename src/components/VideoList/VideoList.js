@@ -9,7 +9,7 @@ export default function VideoList({ videos, pickVideo }) {
          <h2 className='list-container__title' >NEXT VIDEOS</h2>
             {videos.map((video) =>
 
-              <Link className="list"  onClick={() => pickVideo(video)} to={`VideoDetailsPage/${video.id}`} key={video.id} >
+              <Link className="list"   to={`VideoDetailsPage/${video.id}`} key={video.id} >
                
                    <div> <img className="list__video" src={video.image} alt={video.title}></img></div>
                     <div className="list__description">
