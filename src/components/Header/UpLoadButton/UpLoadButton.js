@@ -1,9 +1,11 @@
 
 import "./UpLoadButton.scss"
+import { NavLink } from "react-router-dom";
 
 function UpLoadButton() {
     return (
-        <button href="" className="upload-button">UPLOAD</button>
+        <NavLink to="/UpLoadPage"> <button href="" className="upload-button">UPLOAD</button></NavLink>  
+       
     )
 }
 

@@ -55,3 +55,7 @@ src/Pages/UpLoadPage/UpLoadPage.css.map
 src/Pages/UpLoadPage/UpLoadPage.css
 src/Pages/VideoDetailsPage/VideoDetails.css.map
 src/Pages/VideoDetailsPage/VideoDetails.css
+src/Pages/HomeContentPage/HomeContentPage.css
+src/Pages/HomeContentPage/HomeContentPage.css.map
+src/Pages/DetailsContentPage/DetailsContentPage.css.map
+src/Pages/DetailsContentPage/DetailsContentPage.css

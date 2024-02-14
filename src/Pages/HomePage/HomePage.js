@@ -1,103 +1,86 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { apiKey, apiUrl } from "../../ApiTools/KeyUrl";
+import { useParams } from "react-router-dom";
+import VideoList from "../../components/VideoList/VideoList";
+import DetailsContentPage from "../DetailsContentPage/DetailsContentPage";
+import HomeContentPage from "../HomeContentPage/HomeContentPage";
 
-import Player from '../../components/Player/Player';
-import VideoDescription from '../../components/VideoDescription/VideoDescription'
-import Form from '../../components/Form/Form';
-import CommentsList from '../../components/CommetsList/CommentsList';
-import VideoList from '../../components/VideoList/VideoList';
-import { useEffect, useState, } from 'react';
-import { useParams } from 'react-router-dom';
-import axios from 'axios';
-import './HomePage.scss'
-import { apiKey, apiUrl } from '../../ApiTools/KeyUrl';
 
 
 export default function HomePage() {
 
+    const { videoId } = useParams();
     const [sideLists, setSideList] = useState([]);
     const [mainVideo, setMainVideo] = useState({});
-    const [commentsContent, setCommentsContent] = useState([]);
-    const { videoId } = useParams();
-    console.log(videoId);
-
-
-    const getVideo = async () => {
-        try {
-            const response = await axios.get(`${apiUrl}/videos${apiKey}`);
-            console.log(response.data);
-
-
-            console.log(response.data[0]);
-            setMainVideo(response.data[0])
-            setSideList(response.data)
-        } catch (error) {
-            console.log('this', error);
-        }
-    };
-
+    const [selectedVideo, setSelectedVideo] = useState(null);
+    const [homepage, setHomePage] = useState(true);
+    const [detailsPage, setDetailsPage] = useState(false);
+    const [comments, setComments] = useState({})
 
 
 
     useEffect(() => {
-        getVideo();
-        
+
+        const getListVideo = async () => {
+            try {
+                const response = await axios.get(`${apiUrl}/videos${apiKey}`);
+                console.log(response.data);
+                console.log(response.data[0]);
+                setSideList(response.data)
+                setMainVideo(response.data[0])
+            } catch (error) {
+                console.log('this', error);
+            }
+        };
+        getListVideo();
+
     }, []);
 
-   /* const fetchVideo = async () => {
-        try {
+    useEffect(() => {
+        setHomePage(!videoId); // Set homepage to false when videoId is present
+        if (videoId) {
+            const getVideoSelected = async () => {
+                try {
 
-            const response = await axios.get(`${apiUrl}/videos/${videoId}${apiKey}`);
+                    const response = await axios.get(`${apiUrl}/videos/${videoId}${apiKey}`);
+                    console.log(response.data);
+                    console.log(response.data.video);
+                    console.log(response.data.comments);
+                    setSelectedVideo(response.data)
+                    setComments(response.data.comments)
 
-
-            console.log(response.data);
-            console.log(response.data.video);
-          
-        } catch (error) {
-            console.log('this', error);
+                } catch (error) {
+                    console.log('this', error);
+                }
+            };
+            getVideoSelected();
         }
-    };
-useEffect(()=>{
-    fetchVideo();
-},[videoId])
-*/
+    }, [videoId]);
+//cheking for selected video after is
+    if (videoId && !selectedVideo) {
+        return <div>Loading...</div>;
+    }
 
+    console.log(selectedVideo);
 
     return (
-        <section >
-            <Player video={mainVideo} />
-
-            <div className="body-section">
-                <div className="body-section__descritiption-form">
-                    <VideoDescription
-                        key={mainVideo.id}
-                        channel={mainVideo.channel}
-                        title={mainVideo.title}
-                        timestamp={new Date(mainVideo.timestamp).toLocaleDateString()}
-                        views={mainVideo.views}
-                        likes={mainVideo.likes}
-                        description={mainVideo.description}
-                        comments={mainVideo.comments}
-
-                    />
-                    <Form />
-
-                    {mainVideo.comments && mainVideo.comments.map(comments => (
-                        <CommentsList
-                            key={comments.id}
-                            name={comments.name}
-                            comment={comments.comment}
-                            timestamp={new Date(comments.timestamp).toLocaleDateString()}
-                        />
-
-
-                    ))}
-                </div>
-                <VideoList videos={sideLists} />
-            </div>
+        <section>
+            {  homepage &&<HomeContentPage sideLists={sideLists} mainVideo={mainVideo} /> }
+            { !homepage&& <DetailsContentPage videoId={videoId} selectedVideo={selectedVideo} sideLists={sideLists}/>}
+            <VideoList videos={sideLists} />
         </section>
+       )
+   /* switch (true) {
+        case homepage:
 
-    );
+            return <HomePage sideLists={sideLists}  mainVideo={mainVideo}/>
+        case !detailsPage:
+            return <VideoDetailsPage videoId={videoId} sideLists={sideLists}  selectedVideo={selectedVideo} />
+        default:
+            return null;
+    }*/
 
-
-};
-
+}/*
+*/
 

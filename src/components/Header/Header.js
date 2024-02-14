@@ -7,8 +7,9 @@ import { Link, NavLink } from "react-router-dom";
 function Header() {
     return (
         <header className="App-header">
-           <NavLink to="/"><Logo /> </NavLink> 
-           <NavLink to="/UpLoadPage"><SearchBar /></NavLink>  
+          <Logo /> 
+          <SearchBar /> 
+          
            
         </header>
     )
