@@ -57,7 +57,8 @@ export default function HomePage() {
             getVideoSelected();
         }
     }, [videoId]);
-//cheking for selected video after is
+//cheking for selected video after is mounted  
+
     if (videoId && !selectedVideo) {
         return <div>Loading...</div>;
     }
