@@ -1,13 +1,13 @@
 @use '../../styles/partials/mixin' as *;
 @use '../../styles/partials/varibles' as *;
 
-.player__container {
+.player{
     position: relative;
     padding-bottom: 56.26%;
-  
+    display: flex;
     margin-bottom: 1.5rem;
  
-    &--video {
+    &__video {
         height: 100%;
         width: 100%;
         position: absolute;
@@ -19,5 +19,9 @@
 
       margin-bottom: 0%;
        
+    }
+    &__play{
+      color:white;
+
     }
 }

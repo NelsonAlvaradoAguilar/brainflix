@@ -19,7 +19,7 @@ export default function VideoDescription(props) {
                 </div>
                 <div className='description__divider'></div>
                 <p>{props.description}</p>
-                <h4 className="description__subheader">3 Comments</h4>
+              
             </article>
            
 
