@@ -15,7 +15,7 @@ export default function HomePage() {
     const [mainVideo, setMainVideo] = useState({});
     const [selectedVideo, setSelectedVideo] = useState(null);
     const [homepage, setHomePage] = useState(true);
-    const [detailsPage, setDetailsPage] = useState(false);
+
     const [comments, setComments] = useState({})
 
 
@@ -72,16 +72,6 @@ export default function HomePage() {
             <VideoList videos={sideLists} />
         </section>
        )
-   /* switch (true) {
-        case homepage:
-
-            return <HomePage sideLists={sideLists}  mainVideo={mainVideo}/>
-        case !detailsPage:
-            return <VideoDetailsPage videoId={videoId} sideLists={sideLists}  selectedVideo={selectedVideo} />
-        default:
-            return null;
-    }*/
-
-}/*
-*/
+  
+}
 
