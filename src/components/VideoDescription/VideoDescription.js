@@ -6,7 +6,7 @@ export default function VideoDescription(props) {
             <article className="description">
 
                 <h1 className="description__title">{props.title}</h1>
-                <div className='description__divider'></div>
+                <div className='description__divider  description__divider--top'></div>
                 <div className=" description__interactions">
                     <div className="description__likes-views-channel-timestamp">
                         <p className="description__channel">By {props.channel}</p>
@@ -19,7 +19,7 @@ export default function VideoDescription(props) {
                 </div>
                 <div className='description__divider'></div>
                 <p>{props.description}</p>
-              
+                
             </article>
            
 

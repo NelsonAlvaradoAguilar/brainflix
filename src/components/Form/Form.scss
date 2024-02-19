@@ -10,6 +10,12 @@
         margin-left: 2rem;
 
     }
+    @include desktop {
+       margin-left: 5rem;
+
+    }
+
+ 
 
     &__container {
         height: 100%;
@@ -24,8 +30,8 @@
 
     &__avatar {
         background-image: url(../../assets/Images/Mohan-muruge.jpg);
-        width: 36px;
-        height: 38px;
+        width: 2.5rem;
+        height: 2.5rem;
         background-size: cover;
         border-radius: 50%;
         position: relative;
@@ -34,7 +40,7 @@
         margin-left: 0.7rem;
 
         @include tablet {
-          top: 2.5rem;
+          top: 2.3rem;
         }
     }
 

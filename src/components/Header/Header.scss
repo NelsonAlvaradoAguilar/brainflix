@@ -1,6 +1,6 @@
 @use "../../styles/partials/mixin" as *;
 
-.App-header {
+.header {
 
     display: flex;
     flex-direction: column;
@@ -9,19 +9,17 @@
     margin-right: 1rem;
     margin-bottom: 1rem;
 
-    @include mobile {
-        flex-direction: row;
-    }
-
     @include tablet {
         @include buttonsTablet();
         justify-content: space-between;
-
-       
+        flex-direction: row;
+        padding-right: 3rem;
+        margin-left: 2rem;
         margin-bottom: 0.5rem;
     }
+
     @include desktop {
-     padding-left: 5rem;
-     padding-right: 5rem;
+        padding-left: 5rem;
+        padding-right: 5rem;
     }
 }

@@ -6,7 +6,7 @@ import { Link, NavLink } from "react-router-dom";
 
 function Header() {
     return (
-        <header className="App-header">
+        <header className="header">
           <Logo /> 
           <SearchBar /> 
           

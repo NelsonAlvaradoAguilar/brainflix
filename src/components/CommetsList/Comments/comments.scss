@@ -40,20 +40,15 @@
 
 
     &__avatar {
-        width: 140px;
-        height: 32px;
+        width: 2.5rem;
+        height: 2.5rem;
         margin-right: 1rem;
         border-radius: 50%;
         background-color: $silverSecTxt ;
         position: relative;
         top: 1rem;
 
-        @include tablet {
-
-            width: 58px;
-            height: 32px;
-
-        }
+       
        
        
     }

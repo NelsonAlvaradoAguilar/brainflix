@@ -20,6 +20,8 @@ export default function Form() {
                 </label>
                 <button className="form__button" type="submmit">COMMENT</button>
             </form>
+            
         </section>
+        
     )
 }

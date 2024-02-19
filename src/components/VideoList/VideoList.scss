@@ -5,35 +5,54 @@
     margin-left: 1rem;
     margin-right: 1rem;
     border-top: 1px solid $mercuryDivider;
+    display: flex;
+    flex-direction: column;
 
     &__title {
         color: $silverSecTxt;
         @include sectionHeaderMobile();
-    }
-    @include tablet {
 
+
+
+    }
+
+    @include tablet {
+        padding-top: 3rem;
         margin-left: 3rem;
         margin-right: 3rem;
+
+
     }
 
     @include desktop {
-
         border-left: 1px solid $mercuryDivider ;
-        margin-right: 8rem;
         padding-left: 1.5rem;
-        height: 67.5rem;
-        padding-top: 2rem
+        flex-flow: row wrap;
+
     }
-}
 
-.list {
-    display: flex;
-    align-items: center;
 
+    &__items {
+        display: flex;
+        align-items: center;
+        height: 4.3rem;
+
+        @include tablet {
+            width: 27rem;
+
+            height: 7rem;
+
+        }
+
+        @include desktop {
+            height: 6.25rem;
+            width: 20rem;
+        }
+    }
 
     &__video {
-        width: calc(0.30*100vw);
-        height: calc(0.20*100vw);
+        width: 3.75rem;
+        height: 3.12rem;
         margin-top: 0.5rem;
         margin-bottom: 0.5rem;
         border-radius: 4px;
@@ -48,30 +67,33 @@
         @include desktop {
 
             overflow: scroll;
-            width: 130px;
-            height: 70px;
+            width: 8.12rem;
+            height: 4.37rem;
             margin-top: 0%;
             margin-right: 0.5rem;
         }
     }
 
-    &__title {
+    &__subtitle {
         font-size: 0.8rem;
         text-overflow: ellipsis;
+        color: $brainflixBlack;
+
     }
 
     &__channel {
         font-size: 0.8rem;
-
+        color: $brainflixBlack;
     }
 
     &__description {
-        padding-left: 1rem;
+        padding-left: 0.8rem;
 
         @include desktop {
 
-            height: 130px;
-            width: 130px;
+            height: 6.8rem;
+            width: 9.37rem;
         }
     }
+
 }
