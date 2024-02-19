@@ -1,7 +1,10 @@
 
 import "./Form.scss"
 
+
 export default function Form() {
+
+   
     return (
         <section className="form" >
             <img className="form__avatar"  alt=""></img>

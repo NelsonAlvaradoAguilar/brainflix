@@ -1,9 +1,15 @@
 import React from "react";
 import './UpLoadPage.scss'
+import { useNavigate } from "react-router-dom";
 
 
 
 export default function UpLoadPage() {
+    const navegite =useNavigate()
+
+    const hadleClick =()=>{
+    navegite('/')
+    };
     return (
         <section className="upload-container">
             <h1 className="upload-container__title">Upload Video</h1>
@@ -29,9 +35,9 @@ export default function UpLoadPage() {
                         />
                     </label><br /><br />
                    <div className="upload-container__buttons">
-                   <button className="upload-container__button-publish" >PUBLISH</button><br /><br />
-                    <button className=" upload-container__button-cancel">CANCEL</button>
-                    <button className="upload-container__button-hiden" >PUBLISH</button>
+                   <button onClick={hadleClick} className="upload-container__button-publish" >PUBLISH</button><br /><br />
+                    <button onClick={hadleClick} className=" upload-container__button-cancel">CANCEL</button>
+                    <button onClick={hadleClick}className="upload-container__button-hiden" >PUBLISH</button>
                    </div>
                 </form>
             </div>
