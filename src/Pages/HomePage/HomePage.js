@@ -77,7 +77,7 @@ export default function HomePage() {
 
 
 
-   /* if (videoId && !selectedVideo) {
+  if (!videoId && !selectedVideo) {
         return <div>Loading...</div>;
     }
 
