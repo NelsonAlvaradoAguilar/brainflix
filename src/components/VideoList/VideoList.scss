@@ -1,0 +1,99 @@
+@use '../../styles/partials/mixin' as *;
+@use '../../styles/partials/varibles' as *;
+
+.list-container {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-top: 1px solid $mercuryDivider;
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+        color: $silverSecTxt;
+        @include sectionHeaderMobile();
+
+
+
+    }
+
+    @include tablet {
+        padding-top: 3rem;
+        margin-left: 3rem;
+        margin-right: 3rem;
+
+
+    }
+
+    @include desktop {
+        border-left: 1px solid $mercuryDivider ;
+        padding-left: 1.5rem;
+       
+
+    }
+
+
+    &__items {
+        display: flex;
+        align-items: center;
+        height: 4.3rem;
+
+        @include tablet {
+            width: 27rem;
+
+            height: 7rem;
+
+        }
+
+        @include desktop {
+            height: 6.25rem;
+            width: 20rem;
+        }
+    }
+
+    &__video {
+        width: 3.75rem;
+        height: 3.12rem;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        border-radius: 4px;
+
+        @include tablet {
+
+            width: calc(0.20*100vw);
+            height: calc(0.12*100vw);
+
+        }
+
+        @include desktop {
+
+            overflow: scroll;
+            width: 8.12rem;
+            height: 4.37rem;
+            margin-top: 0%;
+            margin-right: 0.5rem;
+        }
+    }
+
+    &__subtitle {
+        font-size: 0.8rem;
+        text-overflow: ellipsis;
+        color: $brainflixBlack;
+
+    }
+
+    &__channel {
+        font-size: 0.8rem;
+        color: $brainflixBlack;
+    }
+
+    &__description {
+        padding-left: 0.8rem;
+
+        @include desktop {
+
+            height: 6.8rem;
+            width: 9.37rem;
+        }
+    }
+
+}

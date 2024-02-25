@@ -1,0 +1,27 @@
+@use "../../../styles/partials/varibles" as *;
+@use "../../../styles/partials/mixin" as *;
+.upload-button{
+    display: flex;
+    width: 100%;
+    background-color:$brainflixBlue;
+    border-radius: 4px;
+    height: 2.5rem;
+    opacity: calc(0.80);
+    color: $whiteBackgTextC;
+    background-image: url(../../../assets/Icons/upload.svg);
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    background-position: 2%;
+    border-style: none;
+   
+    @include buttonsMobile();
+    cursor: grab;
+    @include anchorList();
+
+    @include tablet{
+        width: 9.375rem;
+       
+        @include labelButtonsabletDesktop();
+    }
+}

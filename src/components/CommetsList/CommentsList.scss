@@ -1,0 +1,27 @@
+@use '../../styles/partials/mixin' as *;
+@use '../../styles/partials/varibles' as *;
+
+
+
+.commentsList-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    &__divider {
+        margin-top: 1rem;
+        border: 0.2px solid $mercuryDivider;
+
+    }
+
+    @include tablet {
+
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+
+    @include desktop {
+     
+        //padding-right: 0%;
+        margin-left: 5rem;
+    }
+}
