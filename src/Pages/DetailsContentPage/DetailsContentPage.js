@@ -6,16 +6,11 @@ import Form from "../../components/Form/Form";
 import './DetailsContentPage.scss'
 
 export default function DetailsContentPage(props) {
-    const videoId = props.videoId
-    const comments = props.selectedVideo.comments;
+  
     const selectedVideo = props.selectedVideo;
 
     return (
         <section className="body-section">
-
-
-
-
 
             <div className="body-section__descritiption-form">
 
@@ -52,4 +47,3 @@ export default function DetailsContentPage(props) {
         </section>
     )
 }
-//  <Player video={selectedVideo} />
