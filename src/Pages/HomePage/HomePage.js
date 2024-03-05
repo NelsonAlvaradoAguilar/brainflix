@@ -61,7 +61,9 @@ export default function HomePage() {
         };
     }, [videoId]);
 
-
+  
+      
+   
 
 
     const handleVideoSelect = () => {
@@ -78,7 +80,7 @@ export default function HomePage() {
             sideLists.push(selectedVideo);
         }
     }, [selectedVideo]);
-   
+
     if (!videoId && !mainVideo) {
         return <div>Loading...</div>;
     }
