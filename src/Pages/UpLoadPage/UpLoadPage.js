@@ -11,7 +11,7 @@ export default function UpLoadPage(props) {
     const [videoTitle, setVideoTitle] = useState('');
     const [videoDescription, setvideoDescription] = useState('');
 
-  
+   
 
 
     const handleChangeVideo = (e) => {
@@ -42,9 +42,10 @@ export default function UpLoadPage(props) {
        
         const handlePostedVideo=async (e)=>{
             e.preventDefault();
+            const thumbnailPath = 'http://localhost:8080/images/upload-video-preview.jpg';
             console.log(videoTitle);
             console.log(videoDescription);
-            const resp= await postVideos(video,videoTitle,videoDescription)
+            const resp= await postVideos(video,videoTitle,videoDescription,thumbnailPath)
             console.log(resp);
         }
 
