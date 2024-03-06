@@ -10,7 +10,7 @@ export default function UpLoadPage(props) {
     const [video, setVideo] = useState('');
     const [videoTitle, setVideoTitle] = useState('');
     const [videoDescription, setvideoDescription] = useState('');
-
+const [image,setImage]=useState();
    
 
 
@@ -29,10 +29,10 @@ export default function UpLoadPage(props) {
     }
  
 
-        const postVideos = async (video,videoTitle,videoDescription) => {
+        const postVideos = async (video,videoTitle,videoDescription,image) => {
        
             try {
-                const response = await axios.post(`${apiUrl}/videos`, { video, videoTitle, videoDescription });
+                const response = await axios.post(`${apiUrl}/videos`, { video, videoTitle, videoDescription,image });
             console.log(response.data);
             return response.data;
             } catch (error) {
@@ -44,8 +44,9 @@ export default function UpLoadPage(props) {
             e.preventDefault();
             const thumbnailPath = 'http://localhost:8080/images/upload-video-preview.jpg';
             console.log(videoTitle);
+            setImage(thumbnailPath)
             console.log(videoDescription);
-            const resp= await postVideos(video,videoTitle,videoDescription,thumbnailPath)
+            const resp= await postVideos(video,videoTitle,videoDescription,image)
             console.log(resp);
         }
 
