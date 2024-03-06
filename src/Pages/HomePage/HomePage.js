@@ -12,88 +12,91 @@ export default function HomePage() {
 
     const { videoId } = useParams();
     const [sideLists, setSideList] = useState([]);
-    const [selectedVideo, setSelectedVideo] = useState(null);
-    const [homepage, setHomePage] = useState(true);
+    const [selectedVideo, setSelectedVideo] = useState({});
+    const [mainVideo, setMainVideo] = useState()
     const [comments, setComments] = useState({})
 
+
     useEffect(() => {
-        const id = videoId ?? sideLists[0];
-        setHomePage(!id)
+        const id = videoId ? videoId : sideLists[0];
+
         const getListVideo = async () => {
+
             try {
                 const response = await axios.get(`${apiUrl}/videos${apiKey}`);
-                console.log(response.data);
+
                 setSideList(response.data)
-                setSelectedVideo(response.data[0])
+                setMainVideo(response.data[0])
             } catch (error) {
                 console.log('this', error);
             }
+
         };
-        getListVideo();
+
+
+        if (id) {
+            getListVideo();
+        }
 
     }, [videoId]);
+
 
 
     useEffect(() => {
+        const getVideoSelected = async () => {
+            try {
 
-        setHomePage(!videoId); // Set homepage to false when videoId is present
-        if (videoId) {
-            const getVideoSelected = async () => {
-                try {
+                const response = await axios.get(`${apiUrl}/videos/${videoId}${apiKey}`);
 
-                    const response = await axios.get(`${apiUrl}/videos/${videoId}${apiKey}`);
-                    console.log(response.data);
-                    console.log(response.data.video);
-                    console.log(response.data.comments);
-                    setSelectedVideo(response.data)
-                    setComments(response.data.comments)
-                    console.log(response.data);
-                } catch (error) {
-                    console.log('this', error);
-                }
-            };
-            getVideoSelected();
+                setSelectedVideo(response.data)
+                setComments(response.data.comments)
+
+            } catch (error) {
+                console.log('this', error);
+            }
+
         }
+        if (videoId) {
+            getVideoSelected();
+        };
     }, [videoId]);
 
+  
+      
+   
 
-    console.log(comments);
 
     const handleVideoSelect = () => {
         const newdSideList = sideLists.filter(video => video.id !== selectedVideo.id);
 
         setSideList(newdSideList)
-        return sideLists.push(selectedVideo);
-       
+        return sideLists
+
     };
     useEffect(() => {
 
         if (selectedVideo) {
             handleVideoSelect();
-            
+            sideLists.push(selectedVideo);
         }
-    }, [selectedVideo,videoId]);
+    }, [selectedVideo]);
 
-
-
-
-    if (!videoId && !selectedVideo) {
+    if (!videoId && !mainVideo) {
         return <div>Loading...</div>;
     }
-
-    console.log(selectedVideo);
 
     return (
         <section className="page-container" >
 
-            <div>
-                <Player video={selectedVideo} />
 
-            </div>
+            {videoId ? <Player video={selectedVideo} /> : <Player video={mainVideo} />}
+
+
+
 
             <div className="page-container__content">
 
-                {!homepage && <DetailsContentPage selectedVideo={selectedVideo} sideLists={sideLists} />}
+                {videoId && <DetailsContentPage selectedVideo={selectedVideo} sideLists={sideLists} />}
 
                 <VideoList videos={sideLists} />
             </div>
