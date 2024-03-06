@@ -8,9 +8,9 @@ import { useNavigate } from "react-router-dom";
 
 export default function UpLoadPage(props) {
     const [video, setVideo] = useState('');
-    const [videoTitle, setVideoTitle] = useState('');
-    const [videoDescription, setvideoDescription] = useState('');
-const [image,setImage]=useState();
+    const [title, setTitle] = useState('');
+    const [description, setdescription] = useState('');
+
    
 
 
@@ -19,37 +19,70 @@ const [image,setImage]=useState();
         console.log(video);
     }
     const handleChangeVideoTitle = (e) => {
-        setVideoTitle(e.target.value);
-        console.log(videoTitle);
+        setTitle(e.target.value);
+        console.log(title);
     }
 
     const handleChangeVideoDescription = (e) => {
-        setvideoDescription(e.target.value);
-        console.log(videoDescription);
+        setdescription(e.target.value);
+        console.log(description);
     }
  
 
-        const postVideos = async (video,videoTitle,videoDescription,image) => {
-       
-            try {
-                const response = await axios.post(`${apiUrl}/videos`, { video, videoTitle, videoDescription,image });
+    const postVideos = async (video, title, description, image,timestamp,channel) => {
+
+        try {
+            const response = await axios.post(`${apiUrl}/videos`, { video, title, description, image,timestamp,channel });
             console.log(response.data);
             return response.data;
-            } catch (error) {
-                console.log('this is the error', error);
-            }
+        } catch (error) {
+            console.log('this is the error', error);
         }
+    }
        
-        const handlePostedVideo=async (e)=>{
+        const handlePostedVideo = async (e) => {
             e.preventDefault();
-            const thumbnailPath = 'http://localhost:8080/images/upload-video-preview.jpg';
-            console.log(videoTitle);
-            setImage(thumbnailPath)
-            console.log(videoDescription);
-            const resp= await postVideos(video,videoTitle,videoDescription,image)
+            const image = 'http://localhost:8080/images/upload-video-preview.jpg';
+            console.log(title);
+           const timestamp=new Date().toLocaleDateString();
+           const channel='My First Video';
+            console.log(image);
+            console.log(description);
+            const resp = await postVideos(video, title, description, image,timestamp,channel);
             console.log(resp);
         }
+/*
+    const handleChangeVideoDescription = (e) => {
+        setDescription(e.target.value);
+        console.log(description);
+    }
 
+
+    const postVideos = async (video, title, description, image,timestamp,channel) => {
+
+        try {
+            const response = await axios.post(`${apiUrl}/videos`, { video, title, description, image,timestamp,channel });
+            console.log(response.data);
+            return response.data;
+        } catch (error) {
+            console.log('this is the error', error);
+        }
+    }
+
+    const handlePostedVideo = async (e) => {
+        e.preventDefault();
+        const image = 'http://localhost:8080/images/upload-video-preview.jpg';
+        console.log(title);
+       const timestamp=new Date().toLocaleDateString();
+       const channel='My First Video';
+        console.log(image);
+        console.log(description);
+        const resp = await postVideos(video, title, description, image,timestamp,channel);
+        console.log(resp);
+    }
+
+
+ */
 
 
     return (
@@ -73,7 +106,7 @@ const [image,setImage]=useState();
                     <label className="upload-container__subtitle">TITLE YOUR VIDEO   <br /><br />
                         <input className="upload-container__input-field"
                             placeholder="Add a title to your video"
-                            value={videoTitle}
+                            value={title}
                             onChange={handleChangeVideoTitle}
                             type="text"
                         />
@@ -82,7 +115,7 @@ const [image,setImage]=useState();
                     <label className="upload-container__subtitle">ADD A VIDEO DESCRIPTION <br /><br />
                         <input className="upload-container__input-field upload-container__input-field--description"
                             placeholder="Add a description to your video "
-                            value={videoDescription}
+                            value={description}
                             onChange={handleChangeVideoDescription}
                             type="text"
                         />
