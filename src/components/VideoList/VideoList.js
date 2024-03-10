@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import './VideoList.scss'
 
 export default function VideoList(props) {
-  const videos = props.videos
+  const videos = props.videos;
   return (
     <section className='list-container'>
      <h2 className='list-container__title' >NEXT VIDEOS</h2>

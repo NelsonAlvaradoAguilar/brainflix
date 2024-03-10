@@ -6,15 +6,15 @@ import Form from "../../components/Form/Form";
 import './DetailsContentPage.scss'
 
 export default function DetailsContentPage(props) {
-  
+  const videoId=props.videoId;
     const selectedVideo = props.selectedVideo;
-
+    const commentsList =props.commentsList
     return (
         <section className="body-section">
 
             <div className="body-section__descritiption-form">
 
-                {selectedVideo && (<VideoDescription
+                {selectedVideo && (<VideoDescription videoId={videoId}
                     key={selectedVideo.id}
                     channel={selectedVideo.channel}
                     title={selectedVideo.title}
@@ -32,15 +32,8 @@ export default function DetailsContentPage(props) {
                 <h3 className="body-section__subtitle">3 comments</h3>
             </div>
 
-            <Form />
-            {selectedVideo.comments && selectedVideo.comments.map(comments => (
-                <CommentsList
-                    key={comments.id}
-                    name={comments.name}
-                    comment={comments.comment}
-                    timestamp={new Date(comments.timestamp).toLocaleDateString()}
-                />
-            ))}
+            <Form videoId={videoId} selectedVideo={selectedVideo} />
+           
 
 
 

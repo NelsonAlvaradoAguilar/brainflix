@@ -14,7 +14,7 @@ export default function HomePage() {
     const [sideLists, setSideList] = useState([]);
     const [selectedVideo, setSelectedVideo] = useState({});
     const [mainVideo, setMainVideo] = useState()
-    const [comments, setComments] = useState({})
+   // const [commentsList, setCommentsList] = useState([])
 
 
     useEffect(() => {
@@ -48,8 +48,9 @@ export default function HomePage() {
 
                 const response = await axios.get(`${apiUrl}/videos/${videoId}${apiKey}`);
 
-                setSelectedVideo(response.data)
-                setComments(response.data.comments)
+                setSelectedVideo(response.data);
+                console.log(response.data.comments);
+              //  setCommentsList(response.data.comments);
 
             } catch (error) {
                 console.log('this', error);
@@ -61,9 +62,8 @@ export default function HomePage() {
         };
     }, [videoId]);
 
-  
-      
-   
+ 
+
 
 
     const handleVideoSelect = () => {
@@ -78,8 +78,13 @@ export default function HomePage() {
         if (selectedVideo) {
             handleVideoSelect();
             sideLists.push(selectedVideo);
+            
         }
     }, [selectedVideo]);
+
+
+
+
 
     if (!videoId && !mainVideo) {
         return <div>Loading...</div>;
@@ -96,9 +101,9 @@ export default function HomePage() {
 
             <div className="page-container__content">
 
-                {videoId && <DetailsContentPage selectedVideo={selectedVideo} sideLists={sideLists} />}
+                {videoId && <DetailsContentPage selectedVideo={selectedVideo} sideLists={sideLists}  videoId={videoId}/>}
 
-                <VideoList videos={sideLists} />
+                <VideoList  videos={sideLists} />
             </div>
 
         </section>

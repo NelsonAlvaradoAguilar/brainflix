@@ -1,6 +1,23 @@
-import React from "react"
+import React,{useParams,useState} from "react";
 import './VideoDescription.scss';
+
+import axios from'axios';
+import { apiKey, apiUrl } from "../../ApiTools/KeyUrl";
 export default function VideoDescription(props) {
+    const videoId =props.videoId;
+  
+    const [commentsLikes, setCommentsLikes] = useState();
+
+    const handlingLikeButtonClick = async () => {
+        try {
+            const response = await axios.put(`${apiUrl}/videos/${videoId}/likes`, { likes: commentsLikes });
+            console.log(response.data.likes);
+            setCommentsLikes(response.data.likes);
+        } catch (error) {
+            console.log('error', error);
+        }
+    }
+
     return (
 
             <article className="description">
@@ -13,13 +30,13 @@ export default function VideoDescription(props) {
                         <p className="descrition__timestamp">{props.timestamp}</p>
                     </div>
                     <div className="description__likes-views-channel-timestamp">
-                        <p className="description__views">{props.views}</p>
+                        <p className="description__views">{props.views}:{commentsLikes}</p>
                         <p className="description__likes">{props.likes}</p>
                     </div>
                 </div>
                 <div className='description__divider'></div>
                 <p>{props.description}</p>
-                
+                <div><button onClick={handlingLikeButtonClick}>like</button></div>
             </article>
            
 

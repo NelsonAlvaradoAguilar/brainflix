@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { apiKey, apiUrl } from "../../ApiTools/KeyUrl";
 import './UpLoadPage.scss'
-import { useNavigate } from "react-router-dom";
+
 
 
 
@@ -29,10 +29,10 @@ export default function UpLoadPage(props) {
     }
  
 
-    const postVideos = async (video, title, description, image,timestamp,channel) => {
+    const postVideos = async (video, title, description, image,channel) => {
 
         try {
-            const response = await axios.post(`${apiUrl}/videos`, { video, title, description, image,timestamp,channel });
+            const response = await axios.post(`${apiUrl}/videos`, { video, title, description, image,channel });
             console.log(response.data);
             return response.data;
         } catch (error) {
@@ -44,45 +44,13 @@ export default function UpLoadPage(props) {
             e.preventDefault();
             const image = 'http://localhost:8080/images/upload-video-preview.jpg';
             console.log(title);
-           const timestamp=new Date().toLocaleDateString();
+         
            const channel='My First Video';
             console.log(image);
             console.log(description);
-            const resp = await postVideos(video, title, description, image,timestamp,channel);
+            const resp = await postVideos(video, title, description, image,channel);
             console.log(resp);
         }
-/*
-    const handleChangeVideoDescription = (e) => {
-        setDescription(e.target.value);
-        console.log(description);
-    }
-
-
-    const postVideos = async (video, title, description, image,timestamp,channel) => {
-
-        try {
-            const response = await axios.post(`${apiUrl}/videos`, { video, title, description, image,timestamp,channel });
-            console.log(response.data);
-            return response.data;
-        } catch (error) {
-            console.log('this is the error', error);
-        }
-    }
-
-    const handlePostedVideo = async (e) => {
-        e.preventDefault();
-        const image = 'http://localhost:8080/images/upload-video-preview.jpg';
-        console.log(title);
-       const timestamp=new Date().toLocaleDateString();
-       const channel='My First Video';
-        console.log(image);
-        console.log(description);
-        const resp = await postVideos(video, title, description, image,timestamp,channel);
-        console.log(resp);
-    }
-
-
- */
 
 
     return (
