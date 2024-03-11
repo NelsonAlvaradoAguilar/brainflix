@@ -1,8 +1,7 @@
 import axios from "axios";
-import { apiKey, apiUrl } from "../../ApiTools/KeyUrl";
+import { apiUrl } from "../../ApiTools/KeyUrl";
 import { useEffect, useState } from "react"
 import "./Form.scss"
-import HomePage from "../../Pages/HomePage/HomePage";
 import CommentsList from "../CommetsList/CommentsList";
 
 
@@ -38,7 +37,7 @@ const handleOnchangeNewComments =(e)=>{
 const getCommentsList= async () => {
     try {
 
-        const response = await axios.get(`${apiUrl}/videos/${videoId}${apiKey}`);    
+        const response = await axios.get(`${apiUrl}/videos/${videoId}`);    
     setCommentsList(response.data.comments);
 
     } catch (error) {

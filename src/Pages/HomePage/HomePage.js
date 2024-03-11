@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { apiKey, apiUrl } from "../../ApiTools/KeyUrl";
+import {  apiUrl } from "../../ApiTools/KeyUrl";
 import { useParams } from "react-router-dom";
 import DetailsContentPage from "../DetailsContentPage/DetailsContentPage";
 import VideoList from "../../components/VideoList/VideoList";
@@ -14,7 +14,7 @@ export default function HomePage() {
     const [sideLists, setSideList] = useState([]);
     const [selectedVideo, setSelectedVideo] = useState({});
     const [mainVideo, setMainVideo] = useState()
-   // const [commentsList, setCommentsList] = useState([])
+
 
 
     useEffect(() => {
@@ -23,7 +23,7 @@ export default function HomePage() {
         const getListVideo = async () => {
 
             try {
-                const response = await axios.get(`${apiUrl}/videos${apiKey}`);
+                const response = await axios.get(`${apiUrl}/videos`);
 
                 setSideList(response.data)
                 setMainVideo(response.data[0])
@@ -46,7 +46,7 @@ export default function HomePage() {
         const getVideoSelected = async () => {
             try {
 
-                const response = await axios.get(`${apiUrl}/videos/${videoId}${apiKey}`);
+                const response = await axios.get(`${apiUrl}/videos/${videoId}`);
 
                 setSelectedVideo(response.data);
                 console.log(response.data.comments);
