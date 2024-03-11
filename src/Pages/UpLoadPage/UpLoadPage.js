@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { apiKey, apiUrl } from "../../ApiTools/KeyUrl";
+import { apiUrl } from "../../ApiTools/KeyUrl";
 import './UpLoadPage.scss'
 
 
@@ -16,16 +16,16 @@ export default function UpLoadPage(props) {
 
     const handleChangeVideo = (e) => {
         setVideo(e.target.value);
-        console.log(video);
+       
     }
     const handleChangeVideoTitle = (e) => {
         setTitle(e.target.value);
-        console.log(title);
+        
     }
 
     const handleChangeVideoDescription = (e) => {
         setdescription(e.target.value);
-        console.log(description);
+  
     }
  
 
@@ -43,11 +43,8 @@ export default function UpLoadPage(props) {
         const handlePostedVideo = async (e) => {
             e.preventDefault();
             const image = 'http://localhost:8080/images/upload-video-preview.jpg';
-            console.log(title);
-         
+       
            const channel='My First Video';
-            console.log(image);
-            console.log(description);
             const resp = await postVideos(video, title, description, image,channel);
             console.log(resp);
         }
