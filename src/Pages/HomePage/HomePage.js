@@ -47,10 +47,7 @@ export default function HomePage() {
             try {
 
                 const response = await axios.get(`${apiUrl}/videos/${videoId}`);
-
                 setSelectedVideo(response.data);
-                console.log(response.data.comments);
-              //  setCommentsList(response.data.comments);
 
             } catch (error) {
                 console.log('this', error);
