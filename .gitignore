@@ -9,7 +9,7 @@
 /coverage
 
 # production
-/build
+
 
 # misc
 .DS_Store
@@ -23,46 +23,8 @@ yarn-debug.log*
 yarn-error.log*
 
 # style-components
-src/components/CommetsList/CommentsList.css
-src/components/CommetsList/CommentsList.css.map
-src/components/CommetsList/Comments/comments.css.map
-src/components/CommetsList/Comments/comments.css
-src/components/Form/Form.css
-src/components/Form/Form.css.map
-src/components/Header/Header.css
-src/components/Header/Header.css.map
-src/components/Header/UpLoadButton/UpLoadButton.css
-src/components/Header/UpLoadButton/UpLoadButton.css.map
-src/components/Header/SearchBar/Searchbar.css.map
-src/components/Header/SearchBar/Searchbar.css
-src/components/Header/Logo/Logo.css
-src/components/Header/Logo/Logo.css.map
-src/components/Player/player.css
-src/components/Player/player.css.map
-src/components/VideoDescription/VideoDescription.css
-src/components/VideoDescription/VideoDescription.css.map
-src/components/VideoList/VideoList.css
-src/components/VideoList/VideoList.css.map
-src/Pages/HomePage/HomePage.css.map
-src/Pages/HomePage/HomePage.css
 
 # style-pages
-src/App.css.map
-src/App.css
-src/Pages/HomePage/HomePage.css
-src/Pages/HomePage/HomePage.css.map
-src/Pages/UpLoadPage/UpLoadPage.css.map
-src/Pages/UpLoadPage/UpLoadPage.css
-src/Pages/VideoDetailsPage/VideoDetails.css.map
-src/Pages/VideoDetailsPage/VideoDetails.css
-src/Pages/HomeContentPage/HomeContentPage.css
-src/Pages/HomeContentPage/HomeContentPage.css.map
-src/Pages/DetailsContentPage/DetailsContentPage.css.map
-src/Pages/DetailsContentPage/DetailsContentPage.css
-src/Pages/HomePage/HomePage.css
-src/Pages/HomeContentPage/HomeContentPage.css
-src/Pages/HomeContentPage/HomeContentPage.css.map
-src/Pages/DetailsContentPage/DetailsContentPage.css
-src/Pages/DetailsContentPage/DetailsContentPage.css.map
+
 
 .vercel

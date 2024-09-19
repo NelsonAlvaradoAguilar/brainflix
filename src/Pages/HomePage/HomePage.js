@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-//import { apiUrl } from "../../ApiTools/KeyUrl";
+
 import { useParams } from "react-router-dom";
 import DetailsContentPage from "../DetailsContentPage/DetailsContentPage";
 import VideoList from "../../components/VideoList/VideoList";
@@ -9,6 +9,7 @@ import Player from "../../components/Player/Player";
 
 export default function HomePage() {
   const apiUrl = "https://nelson-alvarado-brainflix-api.vercel.app";
+
   const { videoId } = useParams();
   const [sideLists, setSideList] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState({});
