@@ -22,7 +22,7 @@ export default function HomePage() {
         const response = await axios.get(`${apiUrl}/videos`);
 
         setSideList(response.data);
-        console.log(response);
+        console.log(response.data);
         setMainVideo(response.data[0]);
       } catch (error) {
         console.log("this", error);
