@@ -39,7 +39,7 @@ export default function UpLoadPage(props) {
 
   const handlePostedVideo = async (e) => {
     e.preventDefault();
-    const image = "http://localhost:8080/images/upload-video-preview.jpg";
+    const image = "https://nelson-alvarado-brainflix-api.vercel.app/images/upload-video-preview.jpg";
 
     const channel = "My First Video";
     const resp = await postVideos(video, title, description, image, channel);
