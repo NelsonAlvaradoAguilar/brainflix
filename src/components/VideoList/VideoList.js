@@ -8,6 +8,7 @@ export default function VideoList(props) {
       <h2 className="list-container__title">NEXT VIDEOS</h2>
       {videos.map((video) => (
         <Link
+        key={video.id}
           className="list-container__items"
           style={{ textDecoration: "none" }}
         >
