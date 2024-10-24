@@ -35,10 +35,11 @@ export default function HomePage() {
     }
   }, [videoId]);
 
-  useEffect(() => {
+ /* useEffect(() => {
     const getVideoSelected = async () => {
       try {
         const response = await axios.get(`${apiUrl}/videos/${videoId}`);
+
         setSelectedVideo(response.data);
       } catch (error) {
         console.log("this", error);
@@ -48,11 +49,12 @@ export default function HomePage() {
       getVideoSelected();
     }
   }, [videoId]);
-
-  const handleVideoSelect = () => {
+*/
+  const handleVideoSelect = (videoId) => {
     const newdSideList = sideLists.filter(
-      (video) => video.id !== selectedVideo.id
+      (video) => video.id !== videoId
     );
+   console.log(newdSideList);
 
     setSideList(newdSideList);
     return sideLists;
