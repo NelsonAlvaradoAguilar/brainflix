@@ -12,56 +12,62 @@ export default function HomePage() {
 
   const { videoId } = useParams();
   const [sideLists, setSideList] = useState([]);
-  const [selectedVideo, setSelectedVideo] = useState({}||null);
+  const [selectedVideo, setSelectedVideo] = useState({});
   const [mainVideo, setMainVideo] = useState(null);
 
-  useEffect(() => {
-    const id = videoId ? videoId : sideLists[0];
+  // 
 
-    const getListVideo = async () => {
-      try {
-        const response = await axios.get(`${apiUrl}/videos`);
+  const getListVideo = async () => {
+    try {
+      const response = await axios.get(`${apiUrl}/videos`);
 
-        setSideList(response.data);
-        console.log(response.data);
-        setMainVideo(response.data[0]);
-      } catch (error) {
-        console.log("this", error);
-      }
-    };
-
-    if (id) {
+      setSideList(response.data);
+      console.log(response.data);
+      setMainVideo(response.data[0]);
+    } catch (error) {
+      console.log("this", error);
+    }
+  };
+  useEffect(
+    
+    () => {
+      const id = videoId ? videoId : sideLists[0];
       getListVideo();
-    }
-  }, [videoId]);
-
- /* useEffect(() => {
-    const getVideoSelected = async () => {
-      try {
-        const response = await axios.get(`${apiUrl}/videos/${videoId}`);
-
-        setSelectedVideo(response.data);
-      } catch (error) {
-        console.log("this", error);
+      if (!videoId) {
+        setMainVideo(sideLists[0])
       }
-    };
+    },
+    [videoId],
+    [sideLists]
+  );
+
+  const getVideoSelected = async (id) => {
+    try {
+      const response = await axios.get(`${apiUrl}/videos/${videoId}`);
+
+      setSelectedVideo(response.data);
+    } catch (error) {
+      console.log("this", error);
+    }
+  };
+
+  useEffect(() => {
     if (videoId) {
-      getVideoSelected();
+      getVideoSelected(videoId)
     }
   }, [videoId]);
-*/
+
   const handleVideoSelect = (videoId) => {
-    const newdSideList = sideLists.filter(
-      (video) => video.id !== videoId
-    );
-   console.log(newdSideList);
+    const newdSideList = sideLists.filter((video) => video.id !== videoId);
+    console.log(newdSideList);
 
     setSideList(newdSideList);
-    return sideLists;
+
+
   };
   useEffect(() => {
     if (selectedVideo) {
-      handleVideoSelect();
+      handleVideoSelect(selectedVideo.id);
       sideLists.push(selectedVideo);
     }
   }, [selectedVideo]);
@@ -87,7 +93,7 @@ export default function HomePage() {
           />
         )}
 
-        <VideoList videos={sideLists} />
+        <VideoList videos={sideLists} handleVideoSelect={handleVideoSelect} />
       </div>
     </section>
   );

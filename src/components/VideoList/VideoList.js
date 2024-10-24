@@ -3,16 +3,20 @@ import "./VideoList.scss";
 
 export default function VideoList(props) {
   const videos = props.videos;
+   
+  const handleVideoSelect =props.handleVideoSelect;
   return (
     <section className="list-container">
       <h2 className="list-container__title">NEXT VIDEOS</h2>
       {videos.map((video) => (
         <Link to={`/videos/${video.id}`}
         key={video.id}
+        onClick={()=>{handleVideoSelect(video.id)}}
           className="list-container__items"
           style={{ textDecoration: "none" }}
         >
           <img
+         
             className="list-container__video"
             src={video.image}
             alt={video.title}
