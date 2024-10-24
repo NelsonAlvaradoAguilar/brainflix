@@ -12,8 +12,8 @@ export default function HomePage() {
 
   const { videoId } = useParams();
   const [sideLists, setSideList] = useState([]);
-  const [selectedVideo, setSelectedVideo] = useState({});
-  const [mainVideo, setMainVideo] = useState();
+  const [selectedVideo, setSelectedVideo] = useState({}||null);
+  const [mainVideo, setMainVideo] = useState(null);
 
   useEffect(() => {
     const id = videoId ? videoId : sideLists[0];
